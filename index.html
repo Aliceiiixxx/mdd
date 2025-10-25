@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>麦当劳测试</title>
-    <!-- 引入Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>麦当劳测试测试</title>
+    <!-- 引入入Tailwind CSS -->
+    <script src="https://://cdn.tailwindcss.com"></script>
     <!-- 引入Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
@@ -94,9 +94,20 @@
         .wave-animation {
             animation: wave 8s linear infinite;
         }
+        
+        /* 针对iOS设备的特殊样式 */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                min-height: -webkit-fill-available;
+            }
+            
+            html {
+                height: -webkit-fill-available;
+            }
+        }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-primary/90 via-primary to-secondary/80 transition-all duration-700 text-white overflow-x-hidden relative">
+<body class="min-h-screen flex flex flex-col justify-center p-4 bg-gradient-to-br from-primary/90 via-primary to-secondary/80 transition-all duration-700 text-white overflow-x-hidden relative">
     <!-- 装饰元素 -->
     <div class="absolute top-0 left-0 w-full overflow-hidden -z-10">
         <svg class="wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -126,51 +137,51 @@
     <!-- 主容器 -->
     <div id="app-container" class="w-full max-w-md text-center relative z-10">
         <!-- 问题区域 -->
-        <div id="question-container" class="mb-12 p-6 md:p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 scale-animation">
+        <div id="question-container" class="mb-6 p-4 md:p-6 bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 scale-animation">
             <!-- 装饰性小图标 -->
-            <div class="flex justify-between mb-4 opacity-70">
+            <div class="flex justify-between mb-3 opacity-70">
                 <i class="fa fa-cutlery text-white"></i>
                 <i class="fa fa-birthday-cake text-white"></i>
             </div>
             
             <!-- 麦当劳标题 -->
-            <div class="mb-6 flex items-center justify-center gap-2">
-                <h2 class="text-[clamp(1.2rem,4vw,1.8rem)] font-bold text-white">请我吃麦当劳</h2>
+            <div class="mb-4 flex items-center justify-center gap-2">
+                <h2 class="text-[clamp(1rem,3vw,1.5rem)] font-bold text-white">请我吃麦当劳</h2>
             </div>
             
-            <h1 id="question-text" class="text-[clamp(1.5rem,5vw,2.5rem)] font-bold text-white pulse pulse-animation transition-all duration-700">
+            <h1 id="question-text" class="text-[clamp(1.2rem,4vw,2rem)] font-bold text-white pulse pulse-animation transition-all duration-700">
                 你愿意请我吃麦当劳吗
             </h1>
             
             <!-- 底部装饰线 -->
-            <div class="mt-4 h-1 w-32 mx-auto bg-gradient-to-r from-secondary to-white rounded-full"></div>
+            <div class="mt-3 h-1 w-24 mx-auto bg-gradient-to-r from-secondary to-white rounded-full"></div>
         </div>
         
         <!-- 按钮区域 -->
-        <div id="buttons-container" class="flex justify-center gap-4 md:gap-8">
-            <button id="yes-btn" class="btn-transition bg-gradient-to-r from-secondary to-secondary hover:from-secondary hover:to-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30 float-animation">
+        <div id="buttons-container" class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+            <button id="yes-btn" class="btn-transition bg-gradient-to-r from-secondary to-secondary hover:from-secondary hover:to-secondary text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/30 float-animation">
                 必须的！
             </button>
-            <button id="no-btn" class="btn-transition bg-gradient-to-r from-primary to-primary hover:from-primary hover:to-primary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/20 float-animation" style="animation-delay: 0.2s">
+            <button id="no-btn" class="btn-transition bg-gradient-to-r from-primary to-primary hover:from-primary hover:to-primary text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/20 float-animation" style="animation-delay: 0.2s">
                 等等再说
             </button>
         </div>
         
         <!-- 庆祝区域 (初始隐藏) -->
         <div id="celebration-container" class="hidden scale-animation">
-            <div class="p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20">
-                <div class="flex justify-center mb-6">
-                    <h2 class="text-4xl font-bold text-white heart-beat">🍟🍔</h2>
+            <div class="p-6 md:p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20">
+                <div class="flex justify-center mb-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white heart-beat">🍟🍔</h2>
                 </div>
                 
-                <h2 class="text-[clamp(1.5rem,5vw,2.2rem)] font-bold text-white mb-4 pulse-animation">
+                <h2 class="text-[clamp(1.2rem,4vw,1.8rem)] font-bold text-white mb-3 pulse-animation">
                     太感谢你了！😊
                 </h2>
-                <p class="text-lg text-white/80 mb-6">
+                <p class="text-base sm:text-lg text-white/80 mb-4">
                     我就知道你对我最好了！我们去吃麦当劳吧，我要吃巨无霸和薯条！
                 </p>
                 
-                <button id="restart-btn" class="btn-transition bg-gradient-to-r from-secondary to-secondary hover:from-secondary hover:to-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none">
+                <button id="restart-btn" class="btn-transition bg-gradient-to-r from-secondary to-secondary hover:from-secondary hover:to-secondary text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none">
                     再来一次
                 </button>
             </div>
@@ -446,6 +457,23 @@
         window.addEventListener('resize', () => {
             if (noBtn.style.position === 'fixed') {
                 moveButtonsRandomly();
+            }
+        });
+        
+        // 页面加载完成后检查设备类型，如果是iOS设备则添加额外的适配
+        window.addEventListener('load', () => {
+            // 检查是否是iOS设备
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            
+            if (isIOS) {
+                // 为iOS设备添加额外的样式
+                document.body.style.paddingTop = '20px';
+                document.body.style.paddingBottom = '20px';
+                
+                // 确保问题容器可见
+                const questionContainer = document.getElementById('question-container');
+                questionContainer.style.marginTop = '0';
+                questionContainer.style.marginBottom = '1rem';
             }
         });
     </script>
